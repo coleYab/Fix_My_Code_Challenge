@@ -10,10 +10,6 @@ class Square():
 
         self.__width = 0
         self.__height = 0
-        if (len(kwargs)) == 0:
-            if (len(args)) == 1:
-                self.width = args[0]
-                self.height = args[0]
         for key, value in kwargs.items():
             if "size" in kwargs.keys():
                 self.width = kwargs["size"]
@@ -67,5 +63,3 @@ if __name__ == "__main__":
     print(s)
     print(s.area_of_my_square())
     print(s.perimeter_of_my_square())
-    s.width = 23
-    print(s)
