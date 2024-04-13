@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Documentations """
 
+
 class square():
     """ Documentations """
 
