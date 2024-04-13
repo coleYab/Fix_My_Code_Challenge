@@ -10,7 +10,15 @@ class Square():
 
         self.__width = 0
         self.__height = 0
+        if (len(kwargs)) == 0:
+            if (len(args)) == 1:
+                self.width = args[0]
+                self.height = args[0]
         for key, value in kwargs.items():
+            if "size" in kwargs.keys():
+                self.width = kwargs["size"]
+                self.height = kwargs["size"]
+                break
             setattr(self, key, value)
 
     @property
@@ -20,9 +28,9 @@ class Square():
 
     @width.setter
     def width(self, value):
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError("width has to be integer")
-        if (value < 0):
+        if value < 0:
             raise ValueError("width has to be > 0")
         self.__width = value
 
@@ -33,9 +41,9 @@ class Square():
 
     @height.setter
     def height(self, value):
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError("height has to be integer")
-        if (value < 0):
+        if value < 0:
             raise ValueError("height has to be > 0")
         self.__height = value
 
@@ -51,11 +59,13 @@ class Square():
     def __str__(self):
         """ Documentations """
 
-        return "{}/{}".format(self.width, self.height)
+        return f"{self.width}/{self.height}"
 
 
 if __name__ == "__main__":
     s = Square(width=12, height=9)
     print(s)
     print(s.area_of_my_square())
-    print(s.PermiterOfMySquare())
+    print(s.perimeter_of_my_square())
+    s.width = 23
+    print(s)
