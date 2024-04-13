@@ -21,29 +21,29 @@ class Square():
     @width.setter
     def width(self, value):
         if type(value) is not int:
-            raise TypeError("The value has to be integer")
+            raise TypeError("width has to be integer")
         if (value < 0):
             raise ValueError("width has to be > 0")
         self.__width = value
 
     @property
     def height(self):
-        """ Getter for width """
+        """ Getter for height """
         return self.__height
 
     @height.setter
     def height(self, value):
         if type(value) is not int:
-            raise TypeError("The value has to be integer")
+            raise TypeError("height has to be integer")
         if (value < 0):
-            raise ValueError("width has to be > 0")
+            raise ValueError("height has to be > 0")
         self.__height = value
 
     def area_of_my_square(self):
         """ Area of the Square """
         return self.width * self.width
 
-    def PermiterOfMySquare(self):
+    def perimeter_of_my_square(self):
         """ Documentations """
 
         return (self.width * 2) + (self.height * 2)
