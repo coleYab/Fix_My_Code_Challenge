@@ -8,10 +8,36 @@ class Square():
     def __init__(self, *args, **kwargs):
         """ Documentations """
 
-        self.width = 0
-        self.height = 0
+        self.__width = 0
+        self.__height = 0
         for key, value in kwargs.items():
             setattr(self, key, value)
+
+    @property
+    def width(self):
+        """ Getter for width """
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        if type(value) is not int:
+            raise TypeError("The value has to be integer")
+        if (value < 0):
+            raise ValueError("width has to be > 0")
+        self.__width = value
+
+    @property
+    def height(self):
+        """ Getter for width """
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        if type(value) is not int:
+            raise TypeError("The value has to be integer")
+        if (value < 0):
+            raise ValueError("width has to be > 0")
+        self.__height = value
 
     def area_of_my_square(self):
         """ Area of the Square """
@@ -29,7 +55,6 @@ class Square():
 
 
 if __name__ == "__main__":
-    """ Documentations """
     s = Square(width=12, height=9)
     print(s)
     print(s.area_of_my_square())
