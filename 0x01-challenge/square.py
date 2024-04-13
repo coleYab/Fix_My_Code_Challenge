@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ Documentations """
 
-
 class square():
     """ Documentations """
 
@@ -26,6 +25,7 @@ class square():
         """ Documentations """
 
         return "{}/{}".format(self.width, self.height)
+
 
 if __name__ == "__main__":
 
