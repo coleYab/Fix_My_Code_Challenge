@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-"""
-User class
-"""
+""" User class """
+
 
 class User():
     """ Documentation """
