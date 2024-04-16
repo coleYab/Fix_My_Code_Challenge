@@ -1,23 +1,26 @@
 #!/usr/bin/python3
+""" Module """
 
 class square():
-    
-    width = 0
-    height = 0
+    """ Class square """
 
-    
     def __init__(self, *args, **kwargs):
+        self.width = 0
+        self.height = 0
+        """ constructor """
         for key, value in kwargs.items():
             setattr(self, key, value)
 
     def area_of_my_square(self):
         """ Area of the square """
-        return self.width * self.width
+        return self.width * self.height
 
     def PermiterOfMySquare(self):
+        """ perimeter of quare """
         return (self.width * 2) + (self.height * 2)
 
     def __str__(self):
+        """ string representation """
         return "{}/{}".format(self.width, self.height)
 
 if __name__ == "__main__":
